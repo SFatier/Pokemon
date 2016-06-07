@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stlib.h>
+
+
+void	battle()
+{
+  char	*attaque;
+  
+  getCreate();
+  attaque= readLine();
+  verification();
+  if (my_strcmp(attaque, "slash"))
+    {
+      slash();
+    }
+    else
+      {
+        if(my_strcmp(attaque, "fire"))
+	  {
+	    fire();
+	  }
+	  else
+	    {
+	      if(my_strcmp(attaque, "gamble"))
+		{
+		  gamble();
+		}
+	      else
+		{
+		  rest(); 
+		}	  
+	    }
+      }  
+}
+
+void	verification(t_creature creature)
+{
+  if (my_putstr.pm < 2)
+    {
+      my_putstr("Vous ne pouvez pas effectuer");
+      batttle();
+    }
+}
+
+void	slash(t_creature *creature, t_cretaure *creature_team)
+{
+  my_putstr("Attaque Sash !!!!....");
+  creature->pv = pv - 15;
+  creature_team->pm = pm - 3;
+  if (creature->pv <= 0)
+    {
+      my_putstr("Vous avez perdu !! :[ ");
+    }
+}
+
+void	fire(t_creature *creature, t_cretaure *creature_team)
+{
+  my_pustr("Attaque Fire !!!!...");
+  creature->pv = pv - 30;
+  creature_team->pv - 7;
+  if (creature->pv <= 0)
+    {
+      my_pustrt("Vous avez perdu !! :[");
+    }
+}
+
+void	gamble(t_creature *creature, t_cretaure *creature_team)
+{
+}
+
+void	rest(t_cretaure *creature_team)
+{
+  my_putstr("Consomme un tour....");
+  creature_team->pm = pm + 10;
+  my_putstr("Tu regagnes  10 PM ");
+}

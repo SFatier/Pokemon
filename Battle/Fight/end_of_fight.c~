@@ -1,0 +1,32 @@
+#include <stdlib.h>
+#include <time.h>
+#include "../Characters/hero.h"
+#include "../Characters/creature.h"
+#include "../libmy/libmy.h"
+
+
+int	add_creature_to_team(t_hero *hero, t_creature *creature);
+
+void	defeatOrCath(t_creature *creature)
+{
+  creature->pv = creature->pvmax;
+  creature->pm = creature->pmmax;
+}
+
+void	catch(t_hero *hero, t_creture *creature)
+{
+  if (add_creature_to_team(t_hero *hero, t_creature *creature) = 1)
+    {
+      catchX(hero, creature); 
+    }
+  else
+    {
+      my_putstr("Echec de l'ajout de votre créature..\n");
+    }
+}
+
+void	catchX(t_creature *creature)
+{
+  creture->pv = creature->pv *2;
+  creature->pm = creature->pm *2;
+}
